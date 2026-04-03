@@ -4,3 +4,6 @@
 venv
 venv/*
 
+# Ignore pycache
+__pycache__
+scripts/__pycache__
