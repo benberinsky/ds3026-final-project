@@ -9,12 +9,14 @@
     - Is there a statistically significant difference in GPA across majors?
     - Does monthly family income significantly predict GPA?
     - Does daily social media usage have a significant negative association with GPA?
+    - **Is there a credible difference between the mean GPA of scholarship students and non-scholarship students in the wider student population**
   - **Predictive question and target variable**
     - Target: Continuous variable, GPA
     - Potential prediction questions: 
       - Can we accurately predict a student's current CGPA using study habits?
       - Predicting classification of low GPA based on social media use/daily lifestyle
-      - Generally predicting GPA based on all features
+      - **Generally predicting GPA based on all features**
+  
 
 
 
