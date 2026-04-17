@@ -58,10 +58,19 @@ def data_prep(data):
     data['interest_area'] = data['interest_area'].apply(lambda x: x if x in valid_interests else 'Other')
 
     # Encoding categorical variables
-    categorical_vars = ['english_proficiency', 'health_issues']
-    binary_vars = ['scholarship', 'gender', 'transportation', 'disabilities', ]
-    data = pd.get_dummies(data, columns=categorical_vars + binary_vars + ['skills', 'interest_area'], drop_first=True)
+    categorical_vars = ['english_proficiency', 'health_issues', 'program']
+    binary_vars = ['scholarship', 'gender', 'transportation', 'disabilities']
 
+    # Added dtype=int to ensure 1/0 instead of True/False
+    data = pd.get_dummies(
+        data, 
+        columns=categorical_vars + binary_vars + ['skills', 'interest_area'], 
+        drop_first=True,
+        dtype=int)
+    # dropping unnecessary columns
+    data = data.drop(columns=["university_admission_year", "hs_grad_year", "semester", 'probation', 'suspension',
+                              'teacher_consultation', 'smartphone', 'computer', 'relationship_status', 
+                              'co_curriculars', 'living_situation', 'learning_mode'])
 
     return data
 
