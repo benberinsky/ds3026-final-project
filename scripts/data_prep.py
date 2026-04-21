@@ -73,8 +73,11 @@ def data_prep(data):
                               'teacher_consultation', 'smartphone', 'computer', 'relationship_status', 
                               'co_curriculars', 'living_situation', 'learning_mode'])
     
-    # Clean final columns
+    # Revise final column names
     data.columns = data.columns.str.lower().str.replace(' ', '_')
+
+    # Drop NA column with NA attendance entry
+    data = data.dropna()
 
     return data
 
