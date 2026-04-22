@@ -67,12 +67,21 @@ def data_prep(data):
         columns=categorical_vars + binary_vars + ['skills', 'interest_area'], 
         drop_first=True,
         dtype=int)
-    # dropping unnecessary columns
+    
+    # Drop unnecessary columns
     data = data.drop(columns=["university_admission_year", "hs_grad_year", "semester", 'probation', 'suspension',
                               'teacher_consultation', 'smartphone', 'computer', 'relationship_status', 
                               'co_curriculars', 'living_situation', 'learning_mode'])
+    
+    # Revise final column names
+    data.columns = data.columns.str.lower().str.replace(' ', '_')
+
+    # Drop NA column with NA attendance entry
+    data = data.dropna()
 
     return data
 
+
+# Run data prep function and save cleaned dataset
 prepared_data = data_prep(pd.read_csv("data/Students_Performance_dataset.csv"))
 prepared_data.to_csv("data/prepared_student_data.csv", index=False)
