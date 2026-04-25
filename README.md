@@ -1,6 +1,6 @@
 # 📊 DS 3026 Final Project
 
-**Group:** Ben Berinsky, Will Wert, Carissa Chen, Mason Nicoletti
+**Group:** Ben Berinsky, William Wert, Carissa Chen, Mason Nicoletti
 
 ---
 
